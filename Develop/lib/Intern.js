@@ -7,9 +7,10 @@ class Intern extends Employee {
         this.school = school;
     }
     printInfo(){
+        super.printInfo()
         console.log(`School: ${this.school}`);
     }
 }
 
-const intern = new Intern ('John', 'Intern', 2, 'john@fakeemail.com', '2University');
-console.log(intern);
+// const intern = new Intern ('John', 'Intern', 2, 'john@fakeemail.com', '2University');
+// console.log(intern);

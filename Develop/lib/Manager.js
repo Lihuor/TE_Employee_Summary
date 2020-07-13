@@ -7,8 +7,9 @@ class Manager extends Employee {
         this.officeNumber = officeNumber;
     }
     printInfo(){
+        super.printInfo()
         console.log(`Office Number: ${this.officeNumber}`);
     }
 }
-const manager = new Manager('Jared','Manager', 1, 'jared@fakeemail.com', '1');
-console.log(manager);
+// const manager = new Manager('Jared','Manager', 1, 'jared@fakeemail.com', '1');
+// console.log(manager);

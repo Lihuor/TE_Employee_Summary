@@ -7,10 +7,11 @@ class Engineer extends Employee{
         this.github = github;
     }
     printInfo(){
+        super.printInfo()
         console.log(`Github: ${this.github}`);
     }
 };
 
-const engineer = new Engineer ('Alec', 'Engineer', 1, 'alec@fakeemail.com', 'ibealec');
-
-console.log(engineer);
+// const engineer = new Engineer ('Alec', 'Engineer', 1, 'alec@fakeemail.com', 'ibealec');
+// engineer.printInfo();
+// console.log(engineer);

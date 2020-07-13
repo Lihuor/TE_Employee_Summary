@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./Develop/lib/htmlRenderer");
+const { error } = require("console");
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -36,37 +37,56 @@ inquirer
     message: 'What is his/her email?',
     name: 'email',
     },
-
+    {
+        type: 'input',
+        message: 'What is his/her office number?',
+        name: 'officeNumber',
+        when: function(currentAnswer){
+            // console.log(currentAnswer);
+            if (currentAnswer.position === 'Manager') {
+                return true;
+            } else {
+                return false;
+            };
+        }
+        },
 ])
-.then(answers =>{
-    if (answers.position === 'Manager') {
-        inquirer
-            .prompt([
-                {
-                type: 'input',
-                message: 'What is his/her office number?',
-                name: 'officeNumber',
-                }
-            ])
-    } else if (answers.position === 'Engineer') {
-        inquirer
-            .prompt([
-                {
-                type: 'input',
-                message: 'What is his/her Github name?',
-                name: 'githubName',
-                }
-            ])
-    } else {
-        inquirer
-            .prompt([
-                {
-                type: 'input',
-                message: 'What is his/her school name?',
-                name: 'schoolName',
-                }
-            ])
-    }
+// and to create objects for each team member (using the correct classes as blueprints!)
+.then(answers =>{ 
+    console.log(answers);
+    // if (answers.position === 'Manager') {
+    //     inquirer
+    //         .prompt([
+    //             {
+    //             type: 'input',
+    //             message: 'What is his/her office number?',
+    //             name: 'officeNumber',
+    //             }
+    //         ])
+    //         .then(answers2 => {
+    //             console.log(answers, answers2 );
+                
+    //         })
+    // } else if (answers.position === 'Engineer') {
+    //     inquirer
+    //         .prompt([
+    //             {
+    //             type: 'input',
+    //             message: 'What is his/her Github name?',
+    //             name: 'githubName',
+    //             }
+    //         ])
+    // } else {
+    //     inquirer
+    //         .prompt([
+    //             {
+    //             type: 'input',
+    //             message: 'What is his/her school name?',
+    //             name: 'schoolName',
+    //             }
+    //         ])
+    // }
+    
 })
 .catch(error => {
     if(error.isTtyError) {
@@ -76,7 +96,6 @@ inquirer
     }
 });
 
-// and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will

@@ -7,11 +7,10 @@ class Employee {
         this.email = email;
     }
     printInfo() {
-        console.log(`${this.name}`);
-        console.log(`${this.position}`)
+        console.log(this.name);
+        console.log(this.position)
         console.log(`ID: ${this.id}`);
         console.log(`Email: ${this.email}`);
-        console.log(`GitHub: ${this.github}`);
         
     }
 }
