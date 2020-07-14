@@ -10,6 +10,10 @@ class Manager extends Employee {
         super.printInfo()
         console.log(`Office Number: ${this.officeNumber}`);
     }
-}
+};
+
+module.exports = Manager;
+
+
 // const manager = new Manager('Jared','Manager', 1, 'jared@fakeemail.com', '1');
 // console.log(manager);

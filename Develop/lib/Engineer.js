@@ -12,6 +12,7 @@ class Engineer extends Employee{
     }
 };
 
+module.exports = Engineer;
 // const engineer = new Engineer ('Alec', 'Engineer', 1, 'alec@fakeemail.com', 'ibealec');
 // engineer.printInfo();
 // console.log(engineer);

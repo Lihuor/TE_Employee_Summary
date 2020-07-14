@@ -13,6 +13,7 @@ const { error } = require("console");
 
 
 // Write code to use inquirer to gather information about the development team members,
+// and to create objects for each team member (using the correct classes as blueprints!)
 inquirer
 .prompt([
     // Questions:
@@ -45,47 +46,29 @@ inquirer
             // console.log(currentAnswer);
             if (currentAnswer.position === 'Manager') {
                 return true;
+            } else if (currentAnswer.position === 'Engineer') {
+                return inquirer.prompt([
+                    {
+                    type: 'input',
+                    message: 'What is his/her GitHub Name?',
+                    name: 'gitHubName',
+                    }
+                ])
+                
             } else {
-                return false;
-            };
+                return inquirer.prompt([
+                    {
+                    type: 'input',
+                    message: 'What is his/her school name?',
+                    name: 'schoolName',
+                    }
+                ])
+            }
         }
         },
 ])
-// and to create objects for each team member (using the correct classes as blueprints!)
 .then(answers =>{ 
     console.log(answers);
-    // if (answers.position === 'Manager') {
-    //     inquirer
-    //         .prompt([
-    //             {
-    //             type: 'input',
-    //             message: 'What is his/her office number?',
-    //             name: 'officeNumber',
-    //             }
-    //         ])
-    //         .then(answers2 => {
-    //             console.log(answers, answers2 );
-                
-    //         })
-    // } else if (answers.position === 'Engineer') {
-    //     inquirer
-    //         .prompt([
-    //             {
-    //             type: 'input',
-    //             message: 'What is his/her Github name?',
-    //             name: 'githubName',
-    //             }
-    //         ])
-    // } else {
-    //     inquirer
-    //         .prompt([
-    //             {
-    //             type: 'input',
-    //             message: 'What is his/her school name?',
-    //             name: 'schoolName',
-    //             }
-    //         ])
-    // }
     
 })
 .catch(error => {

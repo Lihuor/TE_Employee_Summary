@@ -12,5 +12,6 @@ class Intern extends Employee {
     }
 }
 
+module.exports = Intern;
 // const intern = new Intern ('John', 'Intern', 2, 'john@fakeemail.com', '2University');
 // console.log(intern);
