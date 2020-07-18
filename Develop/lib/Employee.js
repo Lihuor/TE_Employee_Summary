@@ -1,21 +1,23 @@
 // TODO: Write code to define and export the Employee class
 class Employee {
-    constructor(name, position, id, email) {
+    constructor(name, id, email) {
         this.name = name;
-        this.position = position;
         this.id = id;
         this.email = email;
     }
-    printInfo() {
-        console.log(this.name);
-        console.log(this.position)
-        console.log(`ID: ${this.id}`);
-        console.log(`Email: ${this.email}`);
-        
+    getName(){
+        return this.name;
+    }
+    getId(){
+        return this.id;
+    }
+    getEmail(){
+        return this.email;
     }
 }
 
-// const employee = new Employee('Alec', 'Engineer', 1, 'alec@fakeemail.com', 'ibealec');
+// const employee = new Employee('Alec', 1, 'alec@fakeemail.com', 'ibealec');
+// console.log(employee);
 
 // employee.printInfo();
 
