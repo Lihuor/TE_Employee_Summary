@@ -38,13 +38,13 @@ function createManager() {
           message: "What is the manager's office number?",
         },
       ])
-      .then(function (result) {
-        console.log(result);
+      .then(function (response) {
+        console.log(response);
         const newManager = new Manager(
-          result.name,
-          result.id,
-          result.email,
-          result.number
+          response.name,
+          response.id,
+          response.email,
+          response.number
         );
         employeeTeam.push(newManager);
         createTeam();
@@ -109,12 +109,12 @@ function createManager() {
           message: "What is the engineer's GitHub username?",
         },
       ])
-      .then(function (result) {
+      .then(function (response) {
         const newEngineer = new Engineer(
-          result.name,
-          result.id,
-          result.email,
-          result.github
+          response.name,
+          response.id,
+          response.email,
+          response.github
         );
         employeeTeam.push(newEngineer);
         createTeam();
@@ -145,12 +145,12 @@ function createManager() {
           message: "What school did the intern attend?",
         },
       ])
-      .then(function (result) {
+      .then(function (response) {
         const newIntern = new Intern(
-          result.name,
-          result.id,
-          result.email,
-          result.school
+          response.name,
+          response.id,
+          response.email,
+          response.school
         );
         employeeTeam.push(newIntern);
         createTeam();

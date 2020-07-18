@@ -14,6 +14,9 @@ class Employee {
     getEmail(){
         return this.email;
     }
+    getRole(){
+        return "Employee";
+    }
 }
 
 // const employee = new Employee('Alec', 1, 'alec@fakeemail.com', 'ibealec');
