@@ -21,21 +21,45 @@ function createManager() {
           name: "name",
           type: "input",
           message: "What is manager's name?",
+          validate: async (input) => {
+            if (input == "" || /\s/.test(input)) {
+                return "Please enter first or last name.";
+            }
+            return true;
+        }
         },
         {
           name: "id",
           type: "input",
           message: "What is manager's ID number?",
+          validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a number";
+            }
+            return true;
+        }
         },
         {
           name: "email",
           type: "input",
           message: "What is manager's email?",
+          validate: async (input) => {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                return true;
+            }
+            return "Please enter a valid email address.";
+        }
         },
         {
           name: "number",
           type: "input",
           message: "What is the manager's office number?",
+          validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a number";
+            }
+            return true;
+        }
         },
       ])
       .then(function (response) {
@@ -92,16 +116,34 @@ function createManager() {
           name: "name",
           type: "input",
           message: "What is engineer's name?",
+          validate: async (input) => {
+            if (input == "" || /\s/.test(input)) {
+                return "Please enter first or last name.";
+            }
+            return true;
+        }
         },
         {
           name: "id",
           type: "input",
           message: "What is engineer's ID number?",
+          validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a number";
+            }
+            return true;
+        }
         },
         {
           name: "email",
           type: "input",
           message: "What is engineer's email?",
+          validate: async (input) => {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                return true;
+            }
+            return "Please enter a valid email address.";
+        }
         },
         {
           name: "github",
@@ -128,16 +170,34 @@ function createManager() {
           name: "name",
           type: "input",
           message: "What is intern's name?",
+          validate: async (input) => {
+            if (input == "" || /\s/.test(input)) {
+                return "Please enter first or last name.";
+            }
+            return true;
+        }
         },
         {
           name: "id",
           type: "input",
           message: "What is intern's ID number?",
+          validate: async (input) => {
+            if (isNaN(input)) {
+                return "Please enter a number";
+            }
+            return true;
+        }
         },
         {
           name: "email",
           type: "input",
           message: "What is intern's email?",
+          validate: async (input) => {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)) {
+                return true;
+            }
+            return "Please enter a valid email address.";
+        }
         },
         {
           name: "school",
